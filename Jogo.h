@@ -36,7 +36,7 @@ public:
 	int getTentativas();
 	void proximaTentativa();
 	void getNumeros();
-	void revelaNumero(char);
+	bool revelaNumero(char);
 	bool comparaValores(char, char);
 };
 

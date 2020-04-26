@@ -68,7 +68,7 @@ void UI::fim(Jogo& jogo) {
 		cout << "Você é o bixão mesmo!" << endl;
 	else if (jogo.getTentativas() < 5)
 		cout << "Até que você é bom de cabeça!" << endl;
-	else if (jogo.getTentativas())
+	else if (jogo.getTentativas() < 10)
 		cout << "Você foi... Eh... Mais ou menos, mais ou menos..." << endl;
 	else
 		cout << "Você precisa praticar mais!" << endl;

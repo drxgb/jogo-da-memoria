@@ -50,13 +50,14 @@ int main() {
 		UI::HUD(jogo);
 
 		char a, b; // Colunas
+		bool revelado = false;
 
 		// Escolher a primeira coluna		
 		do {
 			cout << "Escolha uma coluna de A - J: ";
 			cin >> a;
-		} while (a < 'A' || a > 'J');
-		jogo.revelaNumero(a);
+			revelado = jogo.revelaNumero(a);
+		} while ((a < 'A' || a > 'J') || !revelado);
 
 		// Escolher a segunda coluna
 		UI::limpaTela();
@@ -64,8 +65,8 @@ int main() {
 		do {
 			cout << "Em qual coluna está o par deste número? ";
 			cin >> b;
-		} while (b < 'A' || b > 'J');
-		jogo.revelaNumero(b);
+			revelado = jogo.revelaNumero(b);
+		} while ((b < 'A' || b > 'J') || !revelado);
 
 		// Comparar se os valores são iguais
 		UI::limpaTela();

@@ -84,9 +84,14 @@ void Jogo::getNumeros() {
 	cout << '\0' << endl;
 }
 
-void Jogo::revelaNumero(char col) {
+bool Jogo::revelaNumero(char col) {
 	int i = (int)(col - 65);
+
+	if (this->numeros->at(i).second)
+		return false;
+
 	this->numeros->at(i).second = true;
+	return true;
 }
 
 bool Jogo::comparaValores(char a, char b) {
