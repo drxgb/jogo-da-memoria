@@ -3,7 +3,7 @@
  *		CLASSE UI
  * -------------------------
  * by Dr.XGB
- * Version 1.0
+ * Version 1.1
  *
  * Classe responsável pela interface
  * gráfica do jogo.
@@ -53,8 +53,23 @@ void UI::HUD(Jogo& jogo) {
 }
 
 void UI::fim(Jogo& jogo) {
-	cout << "MUITO BEM !!" << endl;
+	if (jogo.getTentativas() < 3)
+		cout << "INCRÍVEL !!" << endl;
+	else if (jogo.getTentativas() < 5)
+		cout << "MUITO BEM !!" << endl;
+	else if (jogo.getTentativas() < 10)
+		cout << "OK" << endl;
+
 	cout << "Você concluiu o jogo em "
 		<< jogo.getTentativas() << " tentativas"
 		<< endl << endl;
+
+	if (jogo.getTentativas() < 3)
+		cout << "Você é o bixão mesmo!" << endl;
+	else if (jogo.getTentativas() < 5)
+		cout << "Até que você é bom de cabeça!" << endl;
+	else if (jogo.getTentativas())
+		cout << "Você foi... Eh... Mais ou menos, mais ou menos..." << endl;
+	else
+		cout << "Você precisa praticar mais!" << endl;
 }
